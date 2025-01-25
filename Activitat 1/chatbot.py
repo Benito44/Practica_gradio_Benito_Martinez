@@ -8,11 +8,11 @@ with gr.Blocks() as demo:
     clear = gr.Button("Clear")
 
     def user(user_message, history: list):
-        return "", history + [{"role": "user", "content": user_message}]
+        return "", history + [{"role": "user", "content": user_message + "."}]
 
     def bot(history: list):
-        bot_message = random.choice(["Hola", "Como estas?", "Estoy de acuerdo",
-                                     "No", "...", "Adios", "No creo"])
+        bot_message = random.choice(["Hola", "Com estàs?", "Estic d'acord",
+                                     "No", "...", "No crec"])
         history.append({"role": "assistant", "content": ""})
         for character in bot_message:
             history[-1]['content'] += character
